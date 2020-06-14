@@ -2,8 +2,19 @@
 window.MathJax = {
     TeX: {
         equationNumbers: {autoNumber: "AMS"},
-        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"]
+        ],
+        displayMath: [             // start/end delimiter pairs for display math
+            ['$$', '$$'],
+            ['\\[', '\\]']
+        ],
         processEscapes: true,
+        chtml: {
+            displayAlign: 'left',
+            displayIndent: '2em'
+        },
         Macros: {
             x: "{\\times}",
             bm: ["{\\boldsymbol{#1}}",1],
