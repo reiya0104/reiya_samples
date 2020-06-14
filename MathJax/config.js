@@ -2,6 +2,8 @@
 window.MathJax = {
     TeX: {
         equationNumbers: {autoNumber: "AMS"},
+        inlineMath: [["$", "$"], ["\\(", "\\)"]],
+        processEscapes: true,
         Macros: {
             x: "{\\times}",
             bm: ["{\\boldsymbol{#1}}",1],
