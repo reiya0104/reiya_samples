@@ -11,10 +11,6 @@ window.MathJax = {
             ['\\[', '\\]']
         ],
         processEscapes: true,
-        chtml: {
-            displayAlign: 'left',
-            displayIndent: '2em'
-        },
         Macros: {
             x: "{\\times}",
             bm: ["{\\boldsymbol{#1}}",1],
