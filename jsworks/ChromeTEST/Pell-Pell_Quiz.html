@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="config.js"></script>
+    <script>
+      var print = function(name, str) {
+          var name_doc = document.getElementById(`${name}`);
+          console.log(str);
+          name_doc.innerHTML = str;
+          MathJax.Hub.Queue(
+              [ 'Typeset', MathJax.Hub, `${name}` ]
+          );
+      }
+
+      var MathJaxSample4 = function() {
+          var str = String.raw`\[ x^2 - N_2 y^2 = \pm 1 \]`;
+          var str2 = String.raw`
+          \begin{align*}
+              x^2 - N_2 y^2 &= \pm 1
+              \\ \det \begin{bmatrix} x & N_2 y \\ y & x \end{bmatrix} &= x^2 - N_2 y^2
+          \end{align*}`;
+          print('MathJaxSample4', str + str2);
+      }
+
+      var Problem1 = function() {
+          var str = String.raw`
+          (1) 三元連立方程式
+          \[
+              \left\{
+              \begin{aligned}
+                  5 x + 9 y + 12 z &= 1 \\
+                  4 x + 5 y + \: 9 z \ &= 0 \\
+                  3 x + 4 y + \: 5 z \ &= 0 \\
+              \end{aligned}
+              \right.
+              \]
+          \(\quad\:\) を解け。<br>
+          (2) \( \displaystyle \frac{1}{\:5 + 4 \sqrt[3]{3} + 3 \sqrt[3]{9}\:}\)
+          の分母を有理化せよ。
+          `;
+          print('Problem1', str);
+      }
+      var Problem2 = function() {
+          var str = String.raw`
+          \(n\)を\(1\)以上の整数とし，
+          \[\left( 1 + \sqrt[3]{2} + \sqrt[3]{4} \right)^n = x_n + y_n \sqrt[3]{2} + z_n \sqrt[3]{4}\]
+          となるような整数 \(x_n, y_n, z_n\)
+          を考える。
+          \( x = x_n, y = y_n, z = z_n \)
+          とすれば，すべての \(n \ (n = 1, 2, \cdots)\) について
+          \[ x^3 + 2 y^3 + 4 z^3 - 6 x y z = 1 \]
+          を満たすことを示せ。
+          `;
+          print('Problem2', str);
+      }
+      var Problem3 = function() {
+          var str = String.raw`
+          \(a, b\) を正の整数とする。
+          整数 \(n \ (n = 1, 2, \cdots)\)
+          について整数 \(a_n, b_n\)
+          を
+          \[\left( a + b \sqrt{2} \right)^n = a_n + b_n \sqrt{2}\]
+          となるようにとれば，
+          \[ \lim_{n \to \infty} \frac{a_n}{b_n} = \sqrt{2}\]
+          であることを示せ。
+          `;
+          print('Problem3', str);
+      }
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_CHTML"></script>
+</head>
+<body>
+    <div><h1>ぺるぺる模試(仮)</h1></div>
+    <div>
+        <input type="button" value="Problem1" onclick="Problem1()">
+        <div id = "Problem1"></div>
+        <input type="button" value="Problem2" onclick="Problem2()">
+        <div id = "Problem2"></div>
+        <input type="button" value="Problem3" onclick="Problem3()">
+        <div id = "Problem3"></div>
+    </div>
+</body>
+</html>
