@@ -15,16 +15,6 @@
           );
       }
 
-      var MathJaxSample4 = function() {
-          var str = String.raw`\[ x^2 - N_2 y^2 = \pm 1 \]`;
-          var str2 = String.raw`
-          \begin{align*}
-              x^2 - N_2 y^2 &= \pm 1
-              \\ \det \begin{bmatrix} x & N_2 y \\ y & x \end{bmatrix} &= x^2 - N_2 y^2
-          \end{align*}`;
-          print('MathJaxSample4', str + str2);
-      }
-
       var Problem1 = function() {
           var str = String.raw`
           (1) 三元連立方程式
@@ -77,8 +67,10 @@
     <div>
         <input type="button" value="Problem1" onclick="Problem1()">
         <div id = "Problem1"></div>
+        <br>
         <input type="button" value="Problem2" onclick="Problem2()">
         <div id = "Problem2"></div>
+        <br>
         <input type="button" value="Problem3" onclick="Problem3()">
         <div id = "Problem3"></div>
     </div>
